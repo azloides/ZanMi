@@ -15,7 +15,7 @@ const Main = () => {
   useEffect(() => {
     setTimeout(() => {
       fetchPost();
-    }, "1000");
+    }, "3000");
   }, []);
   if (index >= users.length) {
     return (
