@@ -10,7 +10,6 @@ const Main = () => {
   const [fetchPost, isLoaderPost, postEror] = useFetching(async () => {
     const response = await UserService.getAll();
     setUsers(response.data);
-    console.log(response.data);
   });
   useEffect(() => {
     setTimeout(() => {
