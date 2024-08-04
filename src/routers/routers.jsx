@@ -1,6 +1,6 @@
 import React from "react";
-import Login from "../components/MainPage/Login";
-import Zanmi from "../components/MainPage/Zanmi";
+import Login from "../pages/Login";
+import Zanmi from "../pages/Zanmi";
 
 export const routers = [
   {

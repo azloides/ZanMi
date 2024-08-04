@@ -1,10 +1,11 @@
 import React from "react";
 import MyButton from "../../UI/MyButton/MyButton";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
     <nav className="navbar">
-      <div className="navbar__content1">
+      <div className="navbar__content__left-btn">
         <Link to="login" className="navbar__link">
           Странциа регистрации
         </Link>
@@ -12,7 +13,7 @@ const Navbar = () => {
           Главная страница
         </Link>
       </div>
-      <div className="navbar__content2">
+      <div className="navbar__content__right-btn">
         <MyButton>Регистрация</MyButton>
         <MyButton>Войти</MyButton>
       </div>
