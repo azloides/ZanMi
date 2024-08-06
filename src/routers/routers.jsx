@@ -1,16 +1,16 @@
 import React from "react";
-import MainPage from "../components/MainPage/MainPage";
-import Main from "../components/MainPage/Main";
+import Login from "../pages/Login";
+import Zanmi from "../pages/Zanmi";
 
 export const routers = [
   {
     path: "/login",
-    element: <MainPage />,
+    element: <Login />,
     exact: true,
   },
   {
-    path: "/main",
-    element: <Main />,
+    path: "/zanmi",
+    element: <Zanmi />,
     exact: true,
   },
 ];

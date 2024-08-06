@@ -1,0 +1,11 @@
+.myBtnLike {
+  background-color: white;
+  border-radius: 50%;
+  display: flex;
+  margin: 100px;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  align-items: center;
+  font-size: 100px;
+}

@@ -1,22 +1,23 @@
 import React from "react";
 import MyButton from "../../UI/MyButton/MyButton";
 import { Link } from "react-router-dom";
+
 const Navbar = () => {
   return (
-    <div className="background__navbar">
-      <div className="link__block">
-        <Link to="login" className="link">
+    <nav className="navbar">
+      <div className="navbar__content__left-btn">
+        <Link to="login" className="navbar__link">
           Странциа регистрации
         </Link>
-        <Link to="main" className="link">
+        <Link to="zanmi" className="navbar__link">
           Главная страница
         </Link>
       </div>
-      <div className="link__btn">
+      <div className="navbar__content__right-btn">
         <MyButton>Регистрация</MyButton>
         <MyButton>Войти</MyButton>
       </div>
-    </div>
+    </nav>
   );
 };
 

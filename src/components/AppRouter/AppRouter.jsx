@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { routers } from "../../routers/routers";
+
 const AppRouter = () => {
   return (
     <Routes>

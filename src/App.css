@@ -3,14 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 @font-face {
   font-family: "Noto Serif";
   src: url(./Fonts/NotoSerif-Regular.ttf);
 }
+
 body {
   font-family: "Noto Serif";
 }
-.background__navbar {
+
+.navbar {
   padding-right: 15px;
   display: flex;
   height: 50px;
@@ -19,19 +22,34 @@ body {
   align-items: center;
   justify-content: space-between;
 }
-.link__block {
+.all-button {
+  padding: 5px 15px;
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  text-align: center;
+  background: transparent;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.navbar__content__left-btn {
   padding-left: 350px;
   margin-left: 150px;
   width: 65%;
   display: flex;
   justify-content: space-between;
 }
-.link__btn {
+
+.navbar__content__right-btn {
   width: 35%;
   display: flex;
   justify-content: right;
 }
-.link {
+
+.navbar__link {
   font-size: 25px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 5px 15px;
@@ -43,10 +61,11 @@ body {
   text-decoration: none;
 }
 
-.mainPageBackfround {
+.login-block {
   height: 903px;
 }
-.blockText {
+
+.login-block__upper-block__animated-text {
   width: 100%;
   height: 50%;
   display: flex;
@@ -54,7 +73,8 @@ body {
   align-items: center;
   background-color: #6ab193;
 }
-.blockLogo {
+
+.login-block__down-block__block-with-logo {
   display: flex;
   background-color: #85dcb8;
   width: 100%;
@@ -62,18 +82,21 @@ body {
   justify-content: space-between;
   padding: 0 250px;
 }
-.blockLogo__text {
+
+.login-block__down-block__text {
   padding-top: 100px;
   padding-right: 250px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 2s ease-out forwards;
 }
-.blockLogo__text h2 {
+
+.login-block__down-block__text h2 {
   padding-top: 15px;
   font-weight: 100;
 }
-.blockLogo__text button {
+
+.login-block__down-block__text button {
   margin: 30px 0 0 200px;
   font-weight: 100;
   font-size: 15px;
@@ -85,16 +108,19 @@ body {
   cursor: pointer;
   transition: 0.3s;
 }
-.blockLogo__text button:hover {
+
+.login-block__down-block__text button:hover {
   background-color: #75c0a1;
 }
-.animated-text {
+
+.login-block__animated-text {
   font-size: 36px;
   opacity: 0;
   transform: translateY(20px);
   animation: fadeInUp 2s ease-out forwards;
 }
-.mainPageBackfround strong {
+
+.login-block__animated-text strong {
   color: #ff0000;
 }
 
@@ -109,58 +135,49 @@ body {
   }
 }
 
-.mainPage__all {
+.main {
   display: flex;
   height: 100vh;
   flex-direction: column;
   align-items: center;
   background-image: url(./components/img/ZanMi.jpg);
   background-repeat: repeat;
-}
-.loader_end {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.loader_block {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
 
-.block__img {
+.main__loader {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./components/img/ZanMi.jpg);
+  background-repeat: repeat;
+}
+
+.main__block-img {
   display: flex;
   border: 30px solid rgb(255, 255, 255);
   border-radius: 25px;
   margin-top: 25px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
-.all__block__img {
+
+.main__content1 {
   align-items: center;
   justify-content: space-between;
   display: flex;
 }
-.post__img {
+
+.main__img {
   width: 500px;
   height: 665px;
 }
+
 .button_img {
   justify-content: space-between;
   display: flex;
 }
-.btn__like_dislike {
-  background-color: white;
-  border-radius: 50%;
-  display: flex;
-  margin: 100px;
-  justify-content: center;
-  width: 200px;
-  height: 200px;
-  align-items: center;
-  font-size: 100px;
-}
+
 .hearth {
   margin-top: 15px;
   width: 70%;

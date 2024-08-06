@@ -1,17 +1,18 @@
 import React from "react";
-import logo from "../img/a7e6db56-a413-4874-8eb2-a85012ecd73c.png";
-const MainPage = () => {
+import logo from "../components/img/a7e6db56-a413-4874-8eb2-a85012ecd73c.png";
+
+const Login = () => {
   return (
-    <div className="mainPageBackfround">
-      <div className="blockText">
-        <h1 className="animated-text">
+    <div className="login-block">
+      <div className="login-block__upper-block__animated-text">
+        <h1 className="login-block__animated-text">
           <strong>ZanMi</strong> - лучший сайт для нахождения пары в твоём
           городе!
         </h1>
       </div>
-      <div className="blockLogo">
-        <img src={logo} alt="" />
-        <div className="blockLogo__text">
+      <div className="login-block__down-block__block-with-logo">
+        <img src={logo} alt="Тут должно быть фото, но тебе не повезло:(((" />
+        <div className="login-block__down-block__text">
           <h1>Мы за настоящие и искренние свидания.</h1>
           <h2>
             Наш сайт поможет подобрать тебе человека, <br /> с наилучшими
@@ -25,4 +26,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default Login;
