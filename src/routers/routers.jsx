@@ -1,11 +1,11 @@
 import React from "react";
-import Login from "../pages/Login";
+import DatingSearchPage from "../pages/DatingSearchPage";
 import Zanmi from "../pages/Zanmi";
 
 export const routers = [
   {
     path: "/login",
-    element: <Login />,
+    element: <DatingSearchPage />,
     exact: true,
   },
   {
