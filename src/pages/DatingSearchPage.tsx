@@ -1,7 +1,8 @@
 import React from "react";
 import logo from "../components/img/a7e6db56-a413-4874-8eb2-a85012ecd73c.png";
+import Button, { ButtonTheme } from "../UI/Button/Button";
 
-const Login = () => {
+const DatingSearchPage = () => {
   return (
     <div className="login-block">
       <div className="login-block__upper-block__animated-text">
@@ -19,11 +20,11 @@ const Login = () => {
             сходствами с тобой
           </h2>
           <h2>Присойдиняйся и убедись в этом сам!</h2>
-          <button>Регистрация</button>
+          <Button theme={ButtonTheme.REGISTRATIONBORDER}>Регистрация</Button>
         </div>
       </div>
     </div>
   );
 };
 
-export default Login;
+export default DatingSearchPage;

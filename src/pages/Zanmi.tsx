@@ -4,7 +4,7 @@ import breakhearth from "../components/img/brakeheart.png";
 import { useFetching } from "../components/hooks/useFetching";
 import UserService from "../API/UserServise";
 import Loader from "../UI/Loader/Loader";
-import MyButtonLike from "../UI/MyButton/MyButtonLike/MyButtonLike";
+import Button, { ButtonTheme } from "../UI/Button/Button";
 import { IUser } from "../types/types";
 
 const Zanmi = () => {
@@ -32,13 +32,13 @@ const Zanmi = () => {
   return (
     <div className="main">
       <div className="main__content1">
-        <MyButtonLike onClick={() => setIndex(index + 1)}>
+        <Button theme={ButtonTheme.LIKE} moveClick={() => setIndex(index + 1)}>
           <img
             className="hearth"
             src={breakhearth}
             alt="Тут должно быть фото, но тебе не повезло:((("
           />
-        </MyButtonLike>
+        </Button>
         <div className="main__block-img">
           <img
             className="main__img"
@@ -46,13 +46,13 @@ const Zanmi = () => {
             alt="Тут должно быть фото, но тебе не повезло:((("
           />
         </div>
-        <MyButtonLike onClick={() => setIndex(index + 1)}>
+        <Button theme={ButtonTheme.LIKE} moveClick={() => setIndex(index + 1)}>
           <img
             className="hearth"
             src={hearth}
             alt="Тут должно быть фото, но тебе не повезло:((("
           />
-        </MyButtonLike>
+        </Button>
       </div>
       )
     </div>

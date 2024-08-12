@@ -1,26 +1,31 @@
-import React from "react";
+import React, { ButtonHTMLAttributes } from "react";
+import classNames from "classnames";
+import classes from "./Button.module.css";
 
-type ButtonType = "button" | "submit" | "reset" | undefined;
+export enum ButtonTheme {
+  LIKE = "like",
+  MOVEPAGE = "movepage",
+  REGISTRATIONBORDER = "registrationborder",
+  REGISTRATIONEASY = "registrationeasy",
+}
 
-interface ButtonProps {
-  children: React.ReactNode;
-  handClick?: () => void;
-  style?: string;
-  type?: ButtonType;
-  title?: string;
-  disabled?: boolean;
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children?: React.ReactNode;
+  theme: ButtonTheme;
+  moveClick?: () => void;
 }
 
 const Button = (props: ButtonProps) => {
+  const { children, theme, moveClick, ...otherProps } = props;
+
   return (
     <button
-      onClick={props?.handClick}
-      className="${props.style} all-button"
-      type={props?.type}
-      title={props.title}
-      disabled={props?.disabled}
+      className={classNames({
+        [classes[theme]]: true,
+      })}
+      onClick={moveClick}
     >
-      {props.children}
+      {children}
     </button>
   );
 };

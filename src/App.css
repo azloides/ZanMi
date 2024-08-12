@@ -22,6 +22,7 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+
 .all-button {
   padding: 5px 15px;
   color: rgb(255, 255, 255);
@@ -43,13 +44,13 @@ body {
   justify-content: space-between;
 }
 
-.navbar__content__right-btn {
+/* .navbar__content__right-btn {
   width: 35%;
   display: flex;
   justify-content: right;
-}
+} */
 
-.navbar__link {
+/* .navbar__link {
   font-size: 25px;
   font-family: Georgia, "Times New Roman", Times, serif;
   padding: 5px 15px;
@@ -59,7 +60,7 @@ body {
   cursor: pointer;
   font-size: 25px;
   text-decoration: none;
-}
+} */
 
 .login-block {
   height: 903px;
@@ -80,7 +81,6 @@ body {
   width: 100%;
   height: 50%;
   justify-content: space-between;
-  padding: 0 250px;
 }
 
 .login-block__down-block__text {
@@ -94,19 +94,6 @@ body {
 .login-block__down-block__text h2 {
   padding-top: 15px;
   font-weight: 100;
-}
-
-.login-block__down-block__text button {
-  margin: 30px 0 0 200px;
-  font-weight: 100;
-  font-size: 15px;
-  width: 200px;
-  height: 50px;
-  background-color: #85dcb8;
-  border: 1px solid black;
-  border-radius: 50px;
-  cursor: pointer;
-  transition: 0.3s;
 }
 
 .login-block__down-block__text button:hover {
