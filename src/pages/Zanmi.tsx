@@ -1,27 +1,27 @@
 import React, { useEffect, useState } from "react";
 import hearth from "../components/img/klipartz.com.png";
 import breakhearth from "../components/img/brakeheart.png";
-import { useFetching } from "../components/hooks/useFetching";
-import UserService from "../API/UserServise";
 import Loader from "../UI/Loader/Loader";
 import Button, { ButtonTheme } from "../UI/Button/Button";
-import { IUser } from "../types/types";
+import { useUsers } from "./API/users.service";
+import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
+import { getIndex } from "../store/selectors/indexSelector";
+import { increment, decrement } from "../store/slices/indexSlice";
 
 const Zanmi = () => {
-  const [users, setUsers] = useState<IUser[]>([]);
-  const [index, setIndex] = useState<number>(0);
-  const [fetchPost, isLoaderPost, postEror] = useFetching(async () => {
-    const response = await UserService.getAll();
-    setUsers(response.data);
-  });
+  const { data, isLoading } = useUsers(null);
+  const currentIndex = useAppSelector(getIndex);
+  const dispatch = useAppDispatch();
 
-  useEffect(() => {
-    setTimeout(() => {
-      fetchPost();
-    }, "3000");
-  }, []);
+  function incrementIndex() {
+    dispatch(increment());
+  }
 
-  if (isLoaderPost || index >= users.length) {
+  function decrementIndex() {
+    dispatch(decrement());
+  }
+
+  if (isLoading) {
     return (
       <div className="main__loader">
         <Loader />
@@ -32,7 +32,7 @@ const Zanmi = () => {
   return (
     <div className="main">
       <div className="main__content1">
-        <Button theme={ButtonTheme.LIKE} moveClick={() => setIndex(index + 1)}>
+        <Button theme={ButtonTheme.LIKE} moveClick={decrementIndex}>
           <img
             className="hearth"
             src={breakhearth}
@@ -42,11 +42,11 @@ const Zanmi = () => {
         <div className="main__block-img">
           <img
             className="main__img"
-            src={users[index]?.url}
+            src={data?.[currentIndex]?.url}
             alt="Тут должно быть фото, но тебе не повезло:((("
           />
         </div>
-        <Button theme={ButtonTheme.LIKE} moveClick={() => setIndex(index + 1)}>
+        <Button theme={ButtonTheme.LIKE} moveClick={incrementIndex}>
           <img
             className="hearth"
             src={hearth}
