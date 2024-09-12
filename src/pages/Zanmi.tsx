@@ -7,11 +7,23 @@ import { useUsers } from "./API/users.service";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { getIndex } from "../store/selectors/indexSelector";
 import { increment, decrement } from "../store/slices/indexSlice";
+import { useNavigate } from "react-router-dom";
+import { getArrayFromLocal } from "../lib/localStorage";
+import { setUsersData } from "../store/slices/usersSlice";
 
 const Zanmi = () => {
   const { data, isLoading } = useUsers(null);
   const currentIndex = useAppSelector(getIndex);
   const dispatch = useAppDispatch();
+  const isLocalUserData = getArrayFromLocal("localUserData");
+
+  useEffect(() => {
+    if (!isLocalUserData && data) {
+      dispatch(setUsersData(data));
+    } else {
+      dispatch(setUsersData(isLocalUserData));
+    }
+  }, [dispatch, data]);
 
   function incrementIndex() {
     dispatch(increment());
@@ -20,6 +32,8 @@ const Zanmi = () => {
   function decrementIndex() {
     dispatch(decrement());
   }
+
+  const router = useNavigate();
 
   if (isLoading) {
     return (
@@ -54,7 +68,12 @@ const Zanmi = () => {
           />
         </Button>
       </div>
-      )
+      <Button
+        theme={ButtonTheme.REGISTRATIONBORDER}
+        moveClick={() => router(`/profile/${currentIndex}`, { replace: true })}
+      >
+        Профиль
+      </Button>
     </div>
   );
 };
