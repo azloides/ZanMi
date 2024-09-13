@@ -16,7 +16,6 @@ export const usersSlice = createSlice({
   reducers: {
     setUsersData: (state, action: PayloadAction<IUser[]>) => {
       const usersData = action.payload;
-
       saveArrayToLocal(usersData, "users");
       state.users = usersData;
     },

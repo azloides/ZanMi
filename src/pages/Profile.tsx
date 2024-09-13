@@ -5,10 +5,7 @@ import { StateSchema } from "../store/config/stateSchema";
 import { useAppSelector } from "../store/hooks/hooks";
 
 const Profile = () => {
-  const currentIndex = useAppSelector(getIndex);
-  const user = useSelector((state: StateSchema) =>
-    currentIndex !== undefined ? getProfileByIndex(state, currentIndex) : null
-  );
+  const user = useSelector(getProfileByIndex);
 
   return (
     <div>

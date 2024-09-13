@@ -1,10 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { CounterSchema } from "../config/types";
 
-export interface CounterState {
-  index: number;
-}
-
-const initialState: CounterState = {
+const initialState: CounterSchema = {
   index: 0,
 };
 
