@@ -23,6 +23,7 @@ const Button = (props: ButtonProps) => {
       className={classNames({
         [classes[theme]]: true,
       })}
+      {...otherProps}
       onClick={moveClick}
     >
       {children}

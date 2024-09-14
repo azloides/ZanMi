@@ -1,6 +1,7 @@
 import React from "react";
 import DatingSearchPage from "../pages/DatingSearchPage";
 import Zanmi from "../pages/Zanmi";
+import Profile from "../pages/Profile";
 
 export const routers = [
   {
@@ -11,6 +12,11 @@ export const routers = [
   {
     path: "/zanmi",
     element: <Zanmi />,
+    exact: true,
+  },
+  {
+    path: "/profile/:id",
+    element: <Profile />,
     exact: true,
   },
 ];
