@@ -1,27 +1,41 @@
 import React, { ButtonHTMLAttributes } from "react";
 import classNames from "classnames";
-import classes from "./Button.module.css";
+import cl from "./Buttond.module.scss";
 
 export enum ButtonTheme {
   LIKE = "like",
-  MOVEPAGE = "movepage",
   REGISTRATIONBORDER = "registrationborder",
-  REGISTRATIONEASY = "registrationeasy",
+}
+
+export enum ButtonSize {
+  S = "small",
+  M = "midle",
+  L = "large",
+}
+
+export enum ButtonSizeLike {
+  S = "smallLike",
+  M = "midleLike",
+  L = "largeLike",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   theme: ButtonTheme;
+  size?: ButtonSize;
+  sizeLike?: ButtonSizeLike;
   moveClick?: () => void;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, theme, moveClick, ...otherProps } = props;
+  const { children, theme, size, sizeLike, moveClick, ...otherProps } = props;
 
   return (
     <button
       className={classNames({
-        [classes[theme]]: true,
+        [cl[theme]]: true,
+        [cl[size]]: true,
+        [cl[sizeLike]]: true,
       })}
       {...otherProps}
       onClick={moveClick}

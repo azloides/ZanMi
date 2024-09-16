@@ -11,6 +11,7 @@
 
 body {
   font-family: "Noto Serif";
+  overflow: hidden;
 }
 
 .navbar {
@@ -44,11 +45,11 @@ body {
   justify-content: space-between;
 }
 
-/* .navbar__content__right-btn {
+.navbar__content__right-btn {
   width: 35%;
   display: flex;
   justify-content: right;
-} */
+}
 
 /* .navbar__link {
   font-size: 25px;
@@ -150,6 +151,7 @@ body {
 }
 
 .main__content1 {
+  margin-bottom: 30px;
   align-items: center;
   justify-content: space-between;
   display: flex;
@@ -169,4 +171,12 @@ body {
   margin-top: 15px;
   width: 70%;
   height: 70%;
+}
+
+.button-reg {
+  margin-top: 30px;
+}
+
+.login-block__down-block__text__h2 {
+  margin-bottom: 30px;
 }

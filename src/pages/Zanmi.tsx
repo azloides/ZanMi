@@ -2,13 +2,17 @@ import React, { useEffect, useState } from "react";
 import hearth from "../components/img/klipartz.com.png";
 import breakhearth from "../components/img/brakeheart.png";
 import Loader from "../UI/Loader/Loader";
-import Button, { ButtonTheme } from "../UI/Button/Button";
+import Button, {
+  ButtonSize,
+  ButtonSizeLike,
+  ButtonTheme,
+} from "../UI/Button/Button";
 import { useUsers } from "./API/users.service";
 import { useAppDispatch, useAppSelector } from "../store/hooks/hooks";
 import { getIndex } from "../store/selectors/indexSelector";
 import { increment, decrement } from "../store/slices/indexSlice";
 import { useNavigate } from "react-router-dom";
-import { getArrayFromLocal } from "../lib/localStorage";
+import { getArrayFromLocal, getCountFromLocal } from "../lib/localStorage";
 import { setUsersData } from "../store/slices/usersSlice";
 
 const Zanmi = () => {
@@ -16,6 +20,7 @@ const Zanmi = () => {
   const currentIndex = useAppSelector(getIndex);
   const dispatch = useAppDispatch();
   const isLocalUserData = getArrayFromLocal("localUserData");
+  const isLocalCount = getCountFromLocal("count");
 
   useEffect(() => {
     if (!isLocalUserData && data) {
@@ -46,7 +51,11 @@ const Zanmi = () => {
   return (
     <div className="main">
       <div className="main__content1">
-        <Button theme={ButtonTheme.LIKE} moveClick={decrementIndex}>
+        <Button
+          theme={ButtonTheme.LIKE}
+          sizeLike={ButtonSizeLike.M}
+          moveClick={decrementIndex}
+        >
           <img
             className="hearth"
             src={breakhearth}
@@ -56,11 +65,15 @@ const Zanmi = () => {
         <div className="main__block-img">
           <img
             className="main__img"
-            src={data?.[currentIndex]?.url}
+            src={data?.[isLocalCount]?.url}
             alt="Тут должно быть фото, но тебе не повезло:((("
           />
         </div>
-        <Button theme={ButtonTheme.LIKE} moveClick={incrementIndex}>
+        <Button
+          theme={ButtonTheme.LIKE}
+          sizeLike={ButtonSizeLike.M}
+          moveClick={incrementIndex}
+        >
           <img
             className="hearth"
             src={hearth}
@@ -69,6 +82,7 @@ const Zanmi = () => {
         </Button>
       </div>
       <Button
+        size={ButtonSize.L}
         theme={ButtonTheme.REGISTRATIONBORDER}
         moveClick={() => router(`/profile/${currentIndex}`, { replace: true })}
       >

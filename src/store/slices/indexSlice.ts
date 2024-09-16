@@ -1,8 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { CounterSchema } from "../config/types";
+import { getCountFromLocal, saveCountToLocal } from "../../lib/localStorage";
+
+const isLocalCount = getCountFromLocal("count");
 
 const initialState: CounterSchema = {
-  index: 0,
+  index: isLocalCount,
 };
 
 export const counterSlice = createSlice({
@@ -10,10 +13,13 @@ export const counterSlice = createSlice({
   initialState,
   reducers: {
     increment: (state) => {
+      saveCountToLocal(state.index, "count");
       state.index += 1;
+      saveCountToLocal(state.index, "count");
     },
     decrement: (state) => {
       state.index -= 1;
+      saveCountToLocal(state.index, "count");
     },
   },
 });
