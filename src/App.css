@@ -11,6 +11,7 @@
 
 body {
   font-family: "Noto Serif";
+  overflow: hidden;
 }
 
 .navbar {
@@ -44,23 +45,11 @@ body {
   justify-content: space-between;
 }
 
-/* .navbar__content__right-btn {
+.navbar__content__right-btn {
   width: 35%;
   display: flex;
   justify-content: right;
-} */
-
-/* .navbar__link {
-  font-size: 25px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 5px 15px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 25px;
-  text-decoration: none;
-} */
+}
 
 .login-block {
   height: 903px;
@@ -150,12 +139,14 @@ body {
 }
 
 .main__content1 {
+  margin-bottom: 30px;
   align-items: center;
   justify-content: space-between;
   display: flex;
 }
 
 .main__img {
+  object-fit: cover;
   width: 500px;
   height: 665px;
 }
@@ -169,4 +160,12 @@ body {
   margin-top: 15px;
   width: 70%;
   height: 70%;
+}
+
+.button-reg {
+  margin-top: 30px;
+}
+
+.login-block__down-block__text__h2 {
+  margin-bottom: 30px;
 }

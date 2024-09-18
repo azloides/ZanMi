@@ -1,9 +1,9 @@
-export const saveArrayToLocal = (array, key) => {
+export const saveToLocal = (array, key) => {
   const data = JSON.stringify(array);
   localStorage.setItem(key, data);
 };
 
-export const getArrayFromLocal = (key) => {
+export const getFromLocal = (key) => {
   const users = localStorage.getItem(key);
   return users ? JSON.parse(users) : null;
 };

@@ -1,11 +1,9 @@
 import React from "react";
-import { getIndex, getProfileByIndex } from "../store/selectors/indexSelector";
 import { useSelector } from "react-redux";
-import { StateSchema } from "../store/config/stateSchema";
-import { useAppSelector } from "../store/hooks/hooks";
+import { getProgileByIndex } from "../store/selectors/profile";
 
 const Profile = () => {
-  const user = useSelector(getProfileByIndex);
+  const user = useSelector(getProgileByIndex);
 
   return (
     <div>

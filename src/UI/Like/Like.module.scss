@@ -1,0 +1,22 @@
+@mixin button-size-like($lWidth: 300px, $lHeight: 300px) {
+  width: $lWidth;
+  height: $lHeight;
+}
+
+.like {
+  background-color: white;
+  border-radius: 50%;
+  margin: 50px;
+}
+
+.smallLike {
+  @include button-size-like(100px, 100px);
+}
+
+.middleLike {
+  @include button-size-like(200px, 200px);
+}
+
+.largeLike {
+  @include button-size-like();
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import logo from "../components/img/a7e6db56-a413-4874-8eb2-a85012ecd73c.png";
-import Button, { ButtonTheme } from "../UI/Button/Button";
+import Button, { ButtonSize, ButtonTheme } from "../UI/Button/Button";
 
 const DatingSearchPage = () => {
   return (
@@ -19,8 +19,12 @@ const DatingSearchPage = () => {
             Наш сайт поможет подобрать тебе человека, <br /> с наилучшими
             сходствами с тобой
           </h2>
-          <h2>Присойдиняйся и убедись в этом сам!</h2>
-          <Button theme={ButtonTheme.REGISTRATIONBORDER}>Регистрация</Button>
+          <h2 className="login-block__down-block__text__h2">
+            Присойдиняйся и убедись в этом сам!
+          </h2>
+          <Button size={ButtonSize.L} theme={ButtonTheme.default}>
+            Регистрация
+          </Button>
         </div>
       </div>
     </div>

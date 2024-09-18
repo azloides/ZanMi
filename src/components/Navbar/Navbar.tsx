@@ -1,6 +1,6 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Button, { ButtonTheme } from "../../UI/Button/Button";
+import { useNavigate } from "react-router-dom";
+import Button, { ButtonSize, ButtonTheme } from "../../UI/Button/Button";
 
 const Navbar = () => {
   const router = useNavigate();
@@ -8,16 +8,28 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="navbar__content__left-btn">
-        <Button theme={ButtonTheme.MOVEPAGE} moveClick={() => router("login")}>
+        <Button
+          theme={ButtonTheme.default}
+          size={ButtonSize.M}
+          onClick={() => router("login")}
+        >
           Странциа регистрации
         </Button>
-        <Button theme={ButtonTheme.MOVEPAGE} moveClick={() => router("zanmi")}>
+        <Button
+          theme={ButtonTheme.default}
+          size={ButtonSize.M}
+          onClick={() => router("zanmi")}
+        >
           Главная страница
         </Button>
       </div>
       <div className="navbar__content__right-btn">
-        <Button theme={ButtonTheme.REGISTRATIONEASY}>Регистрация</Button>
-        <Button theme={ButtonTheme.REGISTRATIONEASY}>Войти</Button>
+        <Button theme={ButtonTheme.default} size={ButtonSize.M}>
+          Регистрация
+        </Button>
+        <Button theme={ButtonTheme.default} size={ButtonSize.M}>
+          Войти
+        </Button>
       </div>
     </nav>
   );
