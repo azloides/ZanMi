@@ -3,42 +3,33 @@ import classNames from "classnames";
 import cl from "./Buttond.module.scss";
 
 export enum ButtonTheme {
-  LIKE = "like",
-  REGISTRATIONBORDER = "registrationborder",
+  default = "default",
 }
 
 export enum ButtonSize {
   S = "small",
-  M = "midle",
+  M = "middle",
   L = "large",
-}
-
-export enum ButtonSizeLike {
-  S = "smallLike",
-  M = "midleLike",
-  L = "largeLike",
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode;
   theme: ButtonTheme;
   size?: ButtonSize;
-  sizeLike?: ButtonSizeLike;
-  moveClick?: () => void;
+  onClick?: () => void;
 }
 
 const Button = (props: ButtonProps) => {
-  const { children, theme, size, sizeLike, moveClick, ...otherProps } = props;
+  const { children, theme, size, onClick, ...otherProps } = props;
 
   return (
     <button
       className={classNames({
         [cl[theme]]: true,
         [cl[size]]: true,
-        [cl[sizeLike]]: true,
       })}
       {...otherProps}
-      onClick={moveClick}
+      onClick={onClick}
     >
       {children}
     </button>

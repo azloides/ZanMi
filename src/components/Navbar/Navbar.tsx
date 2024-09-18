@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button, { ButtonSize, ButtonTheme } from "../../UI/Button/Button";
 
 const Navbar = () => {
@@ -9,25 +9,25 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar__content__left-btn">
         <Button
-          theme={ButtonTheme.REGISTRATIONBORDER}
+          theme={ButtonTheme.default}
           size={ButtonSize.M}
-          moveClick={() => router("login")}
+          onClick={() => router("login")}
         >
           Странциа регистрации
         </Button>
         <Button
-          theme={ButtonTheme.REGISTRATIONBORDER}
+          theme={ButtonTheme.default}
           size={ButtonSize.M}
-          moveClick={() => router("zanmi")}
+          onClick={() => router("zanmi")}
         >
           Главная страница
         </Button>
       </div>
       <div className="navbar__content__right-btn">
-        <Button theme={ButtonTheme.REGISTRATIONBORDER} size={ButtonSize.M}>
+        <Button theme={ButtonTheme.default} size={ButtonSize.M}>
           Регистрация
         </Button>
-        <Button theme={ButtonTheme.REGISTRATIONBORDER} size={ButtonSize.M}>
+        <Button theme={ButtonTheme.default} size={ButtonSize.M}>
           Войти
         </Button>
       </div>

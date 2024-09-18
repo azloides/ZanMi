@@ -1,8 +1,6 @@
 import React from "react";
 import logo from "../components/img/a7e6db56-a413-4874-8eb2-a85012ecd73c.png";
 import Button, { ButtonSize, ButtonTheme } from "../UI/Button/Button";
-import classNames from "classnames";
-import cl from "../UI/Button/Buttond.module.scss";
 
 const DatingSearchPage = () => {
   return (
@@ -24,7 +22,7 @@ const DatingSearchPage = () => {
           <h2 className="login-block__down-block__text__h2">
             Присойдиняйся и убедись в этом сам!
           </h2>
-          <Button size={ButtonSize.L} theme={ButtonTheme.REGISTRATIONBORDER}>
+          <Button size={ButtonSize.L} theme={ButtonTheme.default}>
             Регистрация
           </Button>
         </div>

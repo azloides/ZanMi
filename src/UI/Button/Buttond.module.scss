@@ -4,7 +4,7 @@
   font-size: $fSize;
 }
 
-.registrationborder {
+.default {
   border: 1px solid black;
   cursor: pointer;
   font-weight: 100;
@@ -12,6 +12,10 @@
   border-radius: 50px;
   transition: 0.3s;
   font-family: Georgia, "Times New Roman", Times, serif;
+  &:hover {
+    transform: scale(1.1); /* Увеличение на 10% при наведении */
+    box-shadow: inset 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
 }
 
 .customMarginButton {
@@ -23,33 +27,10 @@
   @include button-size(10px, 13em, 3em);
 }
 
-.midle {
+.middle {
   @include button-size(15px, 13em, 3em);
 }
 
 .large {
   @include button-size();
-}
-
-@mixin button-size-like($lWidth: 300px, $lHeight: 300px) {
-  width: $lWidth;
-  height: $lHeight;
-}
-
-.like {
-  background-color: white;
-  border-radius: 50%;
-  margin: 50px;
-}
-
-.smallLike {
-  @include button-size-like(100px, 100px);
-}
-
-.midleLike {
-  @include button-size-like(200px, 200px);
-}
-
-.largeLike {
-  @include button-size-like();
 }

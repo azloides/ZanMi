@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUser } from "../../types/types";
-import { saveArrayToLocal } from "../../lib/localStorage";
+import { saveToLocal } from "../../lib/localStorage";
 
 export interface UserState {
   users: IUser[];
@@ -16,7 +16,7 @@ export const usersSlice = createSlice({
   reducers: {
     setUsersData: (state, action: PayloadAction<IUser[]>) => {
       const usersData = action.payload;
-      saveArrayToLocal(usersData, "users");
+      saveToLocal(usersData, "users");
       state.users = usersData;
     },
   },

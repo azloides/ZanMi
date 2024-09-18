@@ -51,18 +51,6 @@ body {
   justify-content: right;
 }
 
-/* .navbar__link {
-  font-size: 25px;
-  font-family: Georgia, "Times New Roman", Times, serif;
-  padding: 5px 15px;
-  color: rgb(255, 255, 255);
-  text-align: center;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 25px;
-  text-decoration: none;
-} */
-
 .login-block {
   height: 903px;
 }
@@ -158,6 +146,7 @@ body {
 }
 
 .main__img {
+  object-fit: cover;
   width: 500px;
   height: 665px;
 }
