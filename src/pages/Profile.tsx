@@ -5,12 +5,7 @@ import { getProgileByIndex } from "../store/selectors/profile";
 const Profile = () => {
   const user = useSelector(getProgileByIndex);
 
-  return (
-    <div>
-      <h1>Привет говно {user?.name}</h1>
-      <img src={user?.url} alt="" />
-    </div>
-  );
+  return <div></div>;
 };
 
 export default Profile;

@@ -1,0 +1,19 @@
+.navbar {
+  @include flex-settings(space-between, center);
+  padding-right: 15px;
+  height: 50px;
+  width: 100%;
+  background-color: #41b3a3;
+
+  &__content__left-btn {
+    @include flex-settings(space-between, center);
+    padding-left: 350px;
+    margin-left: 150px;
+    width: 65%;
+  }
+
+  &__content__right-btn {
+    @include flex-settings(right, center);
+    width: 35%;
+  }
+}
