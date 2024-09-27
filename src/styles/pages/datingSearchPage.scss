@@ -1,0 +1,39 @@
+.login-block {
+  height: 100vh;
+
+  &__upper-block__animated-text {
+    @include flex-settings();
+    width: 100%;
+    height: 50%;
+    background-color: #6ab193;
+  }
+
+  &__animated-text {
+    font-size: 36px;
+    @include animated-text;
+
+    strong {
+      color: #ff0000;
+    }
+  }
+
+  &__down-block__block-with-logo {
+    @include flex-settings(space-between);
+    background-color: #85dcb8;
+    width: 100%;
+    height: 50%;
+  }
+  &__down-block__text {
+    padding-right: 400px;
+    @include animated-text;
+
+    h2 {
+      padding-top: 15px;
+      font-weight: 100;
+    }
+
+    &__h2 {
+      margin-bottom: 30px;
+    }
+  }
+}

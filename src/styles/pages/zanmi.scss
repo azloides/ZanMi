@@ -1,0 +1,39 @@
+.main__loader {
+  height: 100vh;
+  @include flex-settings();
+  @include bg-repeat;
+}
+
+.main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include bg-repeat;
+
+  &__content1 {
+    @include flex-settings(space-between);
+    margin-bottom: 30px;
+  }
+
+  .hearth {
+    margin-top: 15px;
+    width: 70%;
+    height: 70%;
+  }
+
+  &__block-img {
+    display: flex;
+    border: 30px solid rgb(255, 255, 255);
+    border-radius: 25px;
+    margin-top: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    .main__img {
+      object-fit: cover;
+      width: 500px;
+      height: 665px;
+    }
+  }
+}

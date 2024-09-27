@@ -1,0 +1,27 @@
+@mixin flex-settings($justify: center, $items: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $items;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin animated-text {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@mixin bg-repeat {
+  background-image: url("../../components/img/ZanMi.jpg");
+  background-repeat: repeat;
+}

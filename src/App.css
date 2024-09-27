@@ -52,7 +52,7 @@ body {
 }
 
 .login-block {
-  height: 903px;
+  height: 100vh;
 }
 
 .login-block__upper-block__animated-text {
@@ -83,10 +83,6 @@ body {
 .login-block__down-block__text h2 {
   padding-top: 15px;
   font-weight: 100;
-}
-
-.login-block__down-block__text button:hover {
-  background-color: #75c0a1;
 }
 
 .login-block__animated-text {
