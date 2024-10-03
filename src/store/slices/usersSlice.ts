@@ -2,11 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IUser } from "../../types/types";
 import { saveToLocal } from "../../lib/localStorage";
 
-export interface UserState {
+export interface UsersState {
   users: IUser[];
 }
 
-const initialState: UserState = {
+const initialState: UsersState = {
   users: [],
 };
 
