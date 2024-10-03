@@ -22,6 +22,11 @@
 }
 
 @mixin bg-repeat {
-  background-image: url("../../components/img/ZanMi.jpg");
+  background-image: url("https://sun9-58.userapi.com/impg/yxETjzH_RRZCvc2CIrM0UlhW1xSrqXiyFkoUQQ/UOR0q_Iclv4.jpg?size=64x64&quality=96&sign=6c83e2cce45a017bc14b201cdab1f685&type=album");
   background-repeat: repeat;
+}
+
+@mixin img-size($width: 500px) {
+  width: $width;
+  height: $width * 1.33;
 }

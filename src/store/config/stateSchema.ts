@@ -1,9 +1,9 @@
 import { CounterSchema } from "./types";
 import { rtkApi } from "../../API/rtkApi";
-import { UserState } from "../slices/usersSlice";
+import { UsersState } from "../slices/usersSlice";
 
 export interface StateSchema {
   counter: CounterSchema;
-  users: UserState;
+  users: UsersState;
   [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 }

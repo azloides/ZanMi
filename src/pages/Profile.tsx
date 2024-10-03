@@ -1,11 +1,31 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { getProgileByIndex } from "../store/selectors/profile";
+import { IId } from "../types/types";
+import { useUsers } from "./API/users.service";
+import Loader from "../UI/Loader/Loader";
+import { useParams } from "react-router-dom";
+import CardProfile from "../components/CardProfile";
 
 const Profile = () => {
-  const user = useSelector(getProgileByIndex);
+  const { data, isLoading } = useUsers(null);
+  const { id } = useParams<IId>();
 
-  return <div></div>;
+  if (isLoading) {
+    return (
+      <div className="main__loader">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (!id) {
+    return <div>No ID available</div>;
+  }
+
+  return (
+    <div>
+      <CardProfile data={data} id={id} />
+    </div>
+  );
 };
 
 export default Profile;

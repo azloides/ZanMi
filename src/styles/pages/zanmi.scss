@@ -4,6 +4,10 @@
   @include bg-repeat;
 }
 
+.main2 {
+  height: 2600px;
+}
+
 .main {
   height: 100vh;
   display: flex;
@@ -32,8 +36,7 @@
 
     .main__img {
       object-fit: cover;
-      width: 500px;
-      height: 665px;
+      @include img-size();
     }
   }
 }
